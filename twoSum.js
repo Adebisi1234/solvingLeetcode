@@ -21,3 +21,17 @@ function twoSum(arr, pointer) {
 }
 
 twoSum(arr, arr[0]);
+
+// Real Solution
+const twoSum = function(nums, target) {
+    if(nums.length == 2) return [0, 1];
+
+    let hash = {};
+
+    for(let i = 0 ; i < nums.length; i ++) {
+        if(hash[target - nums[i]] || hash[target - nums[i]] == 0) {
+            return [hash[target - nums[i]], i]
+        }
+        hash[nums[i]] = i;
+    }
+};
